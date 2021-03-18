@@ -14,15 +14,6 @@ jobs:
         with:
           java-version: 1.8
 
-      - run: tar -czvf package.tar.gz styles
-
-      - run: mvn deploy:deploy-file \
-          -DgroupId=ru.alfabank.android \
-          -DartifactId=sample \
-          -Dversion=0.0.1 \
-          -Dpackaging=tar.gz \
-          -Dfile=package.tar.gz \
-          -Durl=https://maven.pkg.github.com/antonkazakov/alfa-ui-primitives \
-          -DrepositoryId=github
+      - run: mvn install deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
