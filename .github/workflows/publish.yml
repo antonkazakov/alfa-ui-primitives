@@ -14,7 +14,7 @@ jobs:
         with:
           java-version: 1.8
 
-      - run: tar -czvf package.tar.gz .
+      - run: tar -czvf package.tar.gz styles
 
       - run: mvn deploy:deploy-file \
           -DgroupId=ru.alfabank.android \
