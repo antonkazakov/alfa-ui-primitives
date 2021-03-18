@@ -14,8 +14,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Set up Maven Central Repository
         uses: actions/setup-java@v1
-        with:
-          java-version: 1.8
       -run: zip package.zip .
 
       -run: mvn deploy:deploy-file \
