@@ -14,7 +14,7 @@ jobs:
         with:
           java-version: 1.8
 
-      - run: tar -czvf package.tar.gz /alfa-ui-primitives
+      - run: tar -czvf package.tar.gz .
 
       - run: mvn deploy:deploy-file \
           -DgroupId=ru.alfabank.android \
