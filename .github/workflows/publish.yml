@@ -22,6 +22,7 @@ jobs:
           -Dversion=0.0.1 \
           -Dpackaging=tar.gz \
           -Dfile=package.tar.gz \
+          -Durl=https://maven.pkg.github.com/antonkazakov/alfa-ui-primitives \
           -DrepositoryId=github
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
