@@ -17,11 +17,11 @@ jobs:
       - run: zip package.zip .
 
       - run: mvn deploy:deploy-file \
-        -DgroupId=ru.alfabank.android \
-        -DartifactId=sample \
-        -Dversion=0.0.1 \
-        -Dpackaging=zip \
-        -Dfile=package.zip \
-        -DrepositoryId=github
+          -DgroupId=ru.alfabank.android \
+          -DartifactId=sample \
+          -Dversion=0.0.1 \
+          -Dpackaging=zip \
+          -Dfile=package.zip \
+          -DrepositoryId=github
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
