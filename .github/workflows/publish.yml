@@ -1,4 +1,4 @@
-name: PUBLISH
+name: TEST
 on:
   push:
     branches:
