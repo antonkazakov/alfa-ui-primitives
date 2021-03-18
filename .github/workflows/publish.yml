@@ -20,7 +20,7 @@ jobs:
           -DgroupId=ru.alfabank.android \
           -DartifactId=sample \
           -Dversion=0.0.1 \
-          -Dpackaging=tgz \
+          -Dpackaging=tar.gz \
           -Dfile=package.tar.gz \
           -DrepositoryId=github
         env:
