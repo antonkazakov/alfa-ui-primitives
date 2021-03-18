@@ -6,7 +6,7 @@
     <groupId>ru.alfabank.android</groupId>
     <artifactId>sample</artifactId>
     <version>1.00.00</version>
-    <packaging>zip</packaging>
+    <packaging>tgz</packaging>
     <dependencies/>
     <distributionManagement>
         <repository>

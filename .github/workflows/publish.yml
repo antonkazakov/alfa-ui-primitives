@@ -14,14 +14,14 @@ jobs:
         with:
           java-version: 1.8
 
-      - run: zip package.zip .
+      - run: tar -czvf package.tar.gz /alfa-ui-primitives
 
       - run: mvn deploy:deploy-file \
           -DgroupId=ru.alfabank.android \
           -DartifactId=sample \
           -Dversion=0.0.1 \
-          -Dpackaging=zip \
-          -Dfile=package.zip \
+          -Dpackaging=tgz \
+          -Dfile=package.tar.gz \
           -DrepositoryId=github
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
