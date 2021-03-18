@@ -5,19 +5,23 @@ on:
       - master
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
-          token: ${{ secrets.PAT_TOKEN }}
-
-      - run: npm set registry https://registry.npmjs.org
-
-      - name: Set NPM Token Action
-        uses: filipstefansson/set-npm-token-action@v1
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-java@v1
         with:
-          token: ${{ secrets.NPM_TOKEN }}
+          java-version: 1.8
+      -run: zip package.zip .
 
-      - name: Start publishing icons if its have been added
-        run: npm run ci
+      -run: mvn deploy:deploy-file \
+        -DgroupId=ru.alfabank.android \
+        -DartifactId=sample \
+        -Dversion=0.0.1 \
+        -Dpackaging=zip \
+        -Dfile=package.zip \
+        -DrepositoryId=github
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
